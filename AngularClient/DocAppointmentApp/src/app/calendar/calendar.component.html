@@ -1,0 +1,87 @@
+<div
+  class="calendar-buttons-wrapper"
+  [ngStyle]="!isPersonalCalendar ? { display: 'flex' } : {}"
+>
+  <div class="calendar-container">
+    <full-calendar
+      #calendarComponent
+      [options]="calendarOptions"
+    ></full-calendar>
+  </div>
+  <div
+    class="buttons"
+    [ngStyle]="
+      !isPersonalCalendar
+        ? {
+            'margin-top': '3.9375rem',
+            'margin-left': '3.125rem',
+            display: 'block'
+          }
+        : {}
+    "
+  >
+    <div
+      class="button-wrapper"
+      *ngIf="
+        (isDoctorCalendar && !isPersonalCalendar) ||
+        (!isDoctorCalendar && isPersonalCalendar)
+      "
+    >
+      <button
+        id="edit"
+        (click)="editButtonClick()"
+        [disabled]="editButtonDisabled"
+      >
+        <img src="assets\pencil-icon-blue.svg" />
+        რედაქტირება
+      </button>
+      <small>*აღწერის ცვილილება</small>
+    </div>
+    <button
+      id="delete"
+      (click)="deleteAppointment()"
+      [disabled]="deleteButtonDisabled"
+      [ngStyle]="!isPersonalCalendar ? { 'margin-top': '1.25rem' } : {}"
+    >
+      <img src="assets\delete-file-icon.svg" />
+      წაშლა
+    </button>
+  </div>
+</div>
+<p-confirmDialog [style]="{ width: '30vw' }"></p-confirmDialog>
+
+<p-dialog
+  *ngIf="
+    (isDoctorCalendar && !isPersonalCalendar) ||
+    (!isDoctorCalendar && isPersonalCalendar)
+  "
+  [(visible)]="dialogVisible"
+  [position]="'bottom'"
+  styleClass="w-27rem h-17rem"
+  [closeOnEscape]="true"
+  (onHide)="deselectEvents()"
+>
+  <ng-template pTemplate="header">
+    <span>
+      <p class="text-green-300 m-0">{{ dialogHeaderGenerate() }}</p>
+      <p class="text-blue-900 mt-3 mb-0">
+        შეგიძლიათ მიუთუთოთ თქვენი პორბლემა
+      </p></span
+    >
+  </ng-template>
+  <textarea
+    pInputTextarea
+    class="h-full w-full"
+    placeholder="აღწერა..."
+    [(ngModel)]="appointmentDescription"
+  ></textarea>
+  <ng-template pTemplate="footer">
+    <p-button
+      (click)="dialogButtonClick()"
+      label="{{ dialogButtonLabelGenerate() }}"
+      styleClass="p-button-rounded p-button-success h-3rem w-10rem bg-green-300 border-green-300"
+    ></p-button>
+  </ng-template>
+</p-dialog>
+
+<app-unauthorized-toast #unauthorizedToast></app-unauthorized-toast>

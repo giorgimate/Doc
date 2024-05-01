@@ -1,0 +1,198 @@
+<div class="card">
+  <!-- <p-toast></p-toast> -->
+  <p-table
+    *ngIf="isUserTable"
+    #dt
+    [value]="users!"
+    [globalFilterFields]="['firstName', 'category']"
+    [tableStyle]="{ 'min-width': '75rem', 'max-width': '90rem' }"
+    [style]="{ 'max-width': '90rem' }"
+    [rowHover]="true"
+    dataKey="id"
+    [scrollable]="true"
+    scrollHeight="30rem"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <button
+          pButton
+          pRipple
+          label="დამატება"
+          icon="pi pi-plus"
+          class="p-button-success mr-2"
+          (click)="addUserButtonClick()"
+        ></button>
+
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
+            type="text"
+            (input)="filterGlobal($event)"
+            placeholder="ძებნა..."
+          />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="fistName">სახელი</th>
+        <th *ngIf="isDoctor">კატეგორია</th>
+        <th *ngIf="!isDoctor">ელ-ფოსტა</th>
+        <th>ფოტოსურათი</th>
+        <th *ngIf="!isDoctor">პირადი ნომერი</th>
+        <th *ngIf="isDoctor">რეიტინგი</th>
+
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.firstName }} {{ user.lastName }}</td>
+        <td *ngIf="isDoctor">{{ user.category }}</td>
+        <td *ngIf="!isDoctor">{{ user.email }}</td>
+        <td>
+          <img [src]="user.imageUrl" class="w-2 h-2 border-circle" />
+        </td>
+        <td *ngIf="!isDoctor">{{ user.personalId }}</td>
+
+        <td *ngIf="isDoctor">
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+            <img
+              src="assets\star-icon.svg"
+              [ngClass]="star <= user.rating ? '' : 'hidden'"
+            />
+          </ng-container>
+        </td>
+        <td>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-pencil"
+            class="p-button-rounded p-button-success mr-2 text-green-900 bg-green-100 border-green-100"
+            (click)="editUser(user)"
+          ></button>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-warning text-white bg-red-300 border-red-300"
+            (click)="deleteUser(user)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-table
+    *ngIf="isCategoryTable"
+    #dt
+    [value]="categories!"
+    [globalFilterFields]="['name']"
+    [tableStyle]="{ 'min-width': '75rem', 'max-width': '90rem' }"
+    [style]="{ 'max-width': '90rem' }"
+    [rowHover]="true"
+    dataKey="id"
+    [scrollable]="true"
+    scrollHeight="30rem"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <button
+          pButton
+          pRipple
+          label="დამატება"
+          icon="pi pi-plus"
+          class="p-button-success mr-2"
+          (click)="addCategoryButtonClick()"
+        ></button>
+
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
+            type="text"
+            (input)="filterGlobal($event)"
+            placeholder="ძებნა..."
+          />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name">კატეგორია</th>
+        <th>ექიმების რაოდენობა</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-category>
+      <tr>
+        <td>{{ category.name }}</td>
+        <td>{{ category.doctorsCount }}</td>
+
+        <td>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-pencil"
+            class="p-button-rounded p-button-success mr-2 text-green-900 bg-green-100 border-green-100"
+            (click)="editCategoryButtonClick(category)"
+          ></button>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-warning text-white bg-red-300 border-red-300"
+            (click)="deleteCategory(category)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-confirmDialog
+  header="Confirmation"
+  icon="pi pi-exclamation-triangle"
+  width="425"
+></p-confirmDialog>
+<p-dialog
+  header="Header"
+  [(visible)]="editCategoryDialog"
+  [style]="{ width: '30vw' }"
+  [modal]="true"
+>
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">კატეგორიის სახელის შეცვლა</span>
+  </ng-template>
+  <input type="text" pInputText [(ngModel)]="categoryName" />
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="editCategory()"
+      label="რედაქტირება"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog
+  header="Header"
+  [(visible)]="addCategoryDialog"
+  [style]="{ width: '30vw' }"
+  [modal]="true"
+>
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">ახალი კატეგორიის დამატება</span>
+  </ng-template>
+  <input type="text" pInputText [(ngModel)]="categoryName" />
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="addCategory()"
+      label="დამატება"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>

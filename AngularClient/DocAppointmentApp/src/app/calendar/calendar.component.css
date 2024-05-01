@@ -1,0 +1,175 @@
+.calendar-container {
+  min-width: 51.875rem;
+  width: 51.875rem;
+}
+:host::ng-deep .fc .fc-timegrid-col.fc-day-today {
+  background-color: #ffff;
+}
+:host::ng-deep .fc .fc-non-business {
+  background: rgba(255, 220, 40, 0.15) !important;
+}
+:host::ng-deep .fc-col-header-cell {
+  height: 2.8125rem; /* Set the desired height */
+  line-height: 2.8125rem; /* Adjust the line-height to vertically center the text */
+}
+:host::ng-deep .fc-col-header-cell-cushion {
+  font-size: 0.875rem;
+  color: var(--blue-900) !important;
+  font-weight: 400;
+}
+:host::ng-deep .fc-timegrid-slot-label-cushion {
+  color: var(--blue-900) !important;
+}
+
+:host::ng-deep .fc.fc-theme-standard .fc-view-harness th {
+  background: #ecf2f8;
+}
+:host::ng-deep .fc.fc-theme-standard .fc-view-harness .fc-scrollgrid {
+  box-shadow: 0rem 0.25rem 1.875rem rgba(5, 51, 84, 0.05);
+  overflow: hidden;
+  border-radius: 0.625rem 0.625rem 0.625rem 0.625rem;
+}
+
+:host::ng-deep .available-appointment,
+:host::ng-deep .current-user-appointment,
+:host::ng-deep .non-current-user-appointment,
+:host::ng-deep .full-day-event {
+  display: flex;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+:host::ng-deep .available-appointment {
+  background: none;
+}
+:host::ng-deep .current-user-appointment {
+  background: #dafaee;
+  border-radius: 0.3125rem;
+}
+:host::ng-deep .non-current-user-appointment {
+  background-color: #ff93a6;
+  border-radius: 0.3125rem;
+}
+:host::ng-deep .full-day-event {
+  background-color: #fff1f4;
+}
+:host::ng-deep .non-available-event {
+  background-color: var(--red-100) !important;
+}
+
+:host::ng-deep .available-appointment .fc-event-title,
+:host::ng-deep .current-user-appointment .fc-event-title {
+  margin: auto;
+  font-style: normal;
+  text-align: center;
+}
+
+:host::ng-deep .available-appointment .fc-event-title {
+  color: rgba(5, 51, 84, 0.3);
+}
+:host::ng-deep .available-appointment .fc-event-title::first-letter,
+:host::ng-deep .current-user-appointment .fc-event-title {
+  color: #3acf99;
+}
+:host::ng-deep .non-available-event .fc-event-title {
+  color: var(--red-500) !important;
+}
+
+:host::ng-deep .available-appointment:hover,
+:host::ng-deep .current-user-appointment:hover,
+:host::ng-deep .current-user-appointment.event-selected,
+:host::ng-deep .available-appointment.event-selected {
+  cursor: pointer;
+  background: #c1e6d5;
+}
+:host::ng-deep .non-available-event:hover,
+:host::ng-deep .non-available-event.event-selected {
+  background-color: var(--red-200) !important;
+}
+
+:host::ng-deep .fc .fc-non-business {
+  background: rgba(255, 255, 225, 0.3) !important;
+}
+
+/* calendar end */
+.calendar-buttons-wrapper {
+  width: fit-content;
+}
+.buttons {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 1.875rem;
+  margin-left: auto;
+}
+button {
+  font-family: "FiraGo";
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 3.125rem;
+  display: flex;
+  align-items: center;
+  height: 3.125rem;
+  padding-left: 35px;
+  padding-right: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button#edit {
+  background: #ecf2f8;
+  border: #ecf2f8;
+  color: #18a4e1;
+  margin-right: 1.875rem;
+}
+button#delete {
+  background: #ff93a6;
+  border: #ff93a6;
+  color: #ffffff;
+}
+button:disabled {
+  cursor: auto;
+  opacity: 0.4;
+}
+button img {
+  margin-right: 0.9375rem;
+}
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-wrapper small {
+  margin-top: 0.3125rem;
+  margin-right: 1.875rem;
+  font-size: 0.875rem;
+  color: rgba(5, 51, 84, 0.3);
+}
+
+/* p-dialog start */
+
+:host::ng-deep .p-dialog-header,
+:host::ng-deep .p-dialog-content,
+:host::ng-deep .p-dialog-footer {
+  padding: 0 1.875rem;
+}
+:host::ng-deep .p-dialog-header {
+  padding-top: 1.5625rem;
+  padding-bottom: 0.9375rem;
+  border-top-right-radius: 0.625rem;
+  border-top-left-radius: 0.625rem;
+}
+:host::ng-deep .p-dialog-content {
+  overflow-y: hidden;
+}
+:host::ng-deep .p-dialog-footer {
+  padding-top: 0.9375rem;
+  padding-bottom: 1.25rem;
+  border-bottom-right-radius: 0.625rem;
+  border-bottom-left-radius: 0.625rem;
+}
+:host::ng-deep .p-dialog {
+  border-radius: 0.625rem;
+  box-shadow: 0px 4px 30px rgba(5, 51, 84, 0.2);
+}
+:host::ng-deep .p-inputtextarea {
+  border: 1px solid #ecf2f8;
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "firstName": "ნუგზარ",
+    "lastName": "სანიკიძე",
+    "email": "patient1@test.com",
+    "password": "Test123.",
+    "personalId": "11437802589",
+    "imageId": "11.jpg"
+  },
+  {
+    "firstName": "სვეტლანა",
+    "lastName": "გირაჯიშვილი",
+    "email": "patient2@test.com",
+    "password": "Test123.",
+    "personalId": "11434941739",
+    "imageId": "12.jpg"
+  },
+  {
+    "firstName": "დიანა",
+    "lastName": "ჭენტერელი",
+    "email": "patient3@test.com",
+    "password": "Test123.",
+    "personalId": "11433872555",
+    "imageId": "13.jpg"
+  },
+  {
+    "firstName": "ქეთევანი",
+    "lastName": "დავითაშვილი",
+    "email": "patient4@test.com",
+    "password": "Test123.",
+    "personalId": "11430504566",
+    "imageId": "13.jpg"
+  },
+  {
+    "firstName": "ნიკოლოზ",
+    "lastName": "ლომიძე",
+    "email": "patient5@test.com",
+    "password": "Test123.",
+    "personalId": "11434268001",
+    "imageId": "13.jpg"
+  },
+  {
+    "firstName": "მარიამ",
+    "lastName": "კახიაშვილი",
+    "email": "patient6@test.com",
+    "password": "Test123.",
+    "personalId": "11430504380",
+    "imageId": "13.jpg"
+  },
+  {
+    "firstName": "დავითი",
+    "lastName": "ცინცაძე",
+    "email": "patient7@test.com",
+    "password": "Test123.",
+    "personalId": "11438556395",
+    "imageId": "13.jpg"
+  },
+  {
+    "firstName": "ნიკა",
+    "lastName": "ჭიქვაძე",
+    "email": "patient8@test.com",
+    "password": "Test123.",
+    "personalId": "11431977450",
+    "imageId": "13.jpg"
+  },
+  {
+    "firstName": "ლაშა",
+    "lastName": "გოგიტიძე",
+    "email": "patient9@test.com",
+    "password": "Test123.",
+    "personalId": "11439296141",
+    "imageId": "13.jpg"
+  },
+  {
+    "firstName": "გიორგი",
+    "lastName": "გურიანი",
+    "email": "patient10@test.com",
+    "password": "Test123.",
+    "personalId": "11439414804",
+    "imageId": "13.jpg"
+  }
+]

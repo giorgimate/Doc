@@ -1,0 +1,80 @@
+<div class="flex align-items-center flex-wrap" id="container">
+  <div class="flex align-items-center justify-content-center mr-auto">
+    <img src="assets\company-icon-red.png" width="56" height="38" />
+    <span class="ml-2 font-medium text-red-500" id="company-name">კლინიკა</span>
+  </div>
+
+  <p-tabMenu class="mr-6" [model]="items" [activeItem]="activeItem"></p-tabMenu>
+
+  <div *ngIf="!userLoggedIn" class="p-buttonset mr-5">
+    <button
+      id="menu-button"
+      pButton
+      pRipple
+      label="ავტორიზაცია"
+      class="h-3rem pr-1 border-round-left-3xl bg-blue-50 border-blue-50 text-900"
+      (click)="showLoginDialog()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      [disabled]="true"
+      label="/"
+      class="h-3rem px-0 bg-blue-50 border-blue-50 text-900"
+    ></button>
+    <button
+      id="menu-button"
+      pButton
+      pRipple
+      label="რეგისტრაცია"
+      class="h-3rem pl-1 border-round-right-3xl bg-blue-50 border-blue-50 text-900"
+      routerLink="/register"
+    ></button>
+  </div>
+  <div *ngIf="userLoggedIn" class="p-buttonset mr-3">
+    <button
+      id="menu-button"
+      (click)="redirectTo()"
+      pButton
+      pRipple
+      label="{{ user?.firstName }} {{ user?.lastName }}"
+      class="h-3rem pr-3 pl-1 border-round-3xl bg-blue-50 border-blue-50 text-900 mr-3"
+    >
+      <img
+        [src]="user?.imageUrl"
+        class="h-2rem w-2rem border-circle bg-white mr-3"
+      />
+    </button>
+
+    <p-button
+      icon="pi pi-sign-out"
+      styleClass="p-button-rounded bg-blue-50 border-blue-50 text-red-500 h-3rem w-3rem border-circle hover:text-blue-400"
+      (click)="logOut()"
+    ></p-button>
+  </div>
+
+  <p-button
+    id="menu-button"
+    label="ENG"
+    styleClass="h-3rem p-button-rounded w-5rem bg-blue-50 border-blue-50 text-900"
+  ></p-button>
+</div>
+
+<p-dialog
+  header="ავტორიზაცია"
+  [(visible)]="displayLogin"
+  [modal]="true"
+  [draggable]="false"
+  [dismissableMask]="true"
+  [showHeader]="true"
+  [style]="{
+    width: '37.5rem',
+    'max-width': '80vw',
+    margin: 'auto',
+    top: '-1rem'
+  }"
+>
+  <ng-container *ngIf="displayLogin">
+    <app-login (loginSuccess)="onLoginSuccess()"></app-login>
+  </ng-container>
+</p-dialog>

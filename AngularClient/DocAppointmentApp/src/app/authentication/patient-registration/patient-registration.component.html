@@ -1,0 +1,168 @@
+<div class="p-d-flex p-jc-center p-mt-5">
+  <div id="form-container">
+    <h2 class="p-text-center m-0 font-medium" id="form-title">რეგისტრაცია</h2>
+
+    <form
+      [formGroup]="registrationForm"
+      (ngSubmit)="onSubmit(registrationForm)"
+    >
+      <div class="p-fluid flex flex-wrap justify-content-between mr-8">
+        <div class="p-field">
+          <label for="firstname">სახელი</label>
+          <input
+            id="firstname"
+            type="text"
+            pInputText
+            formControlName="firstName"
+          />
+          <p
+            *ngIf="submitted && registrationForm.get('firstName')?.errors"
+            id="error-message"
+          >
+            *გთხოვთ შეიყვანეთ სახელი ქართული ასოებით
+          </p>
+        </div>
+
+        <div class="p-field">
+          <label for="email">ელ-ფოსტა</label>
+          <span class="p-input-icon-right">
+            <i
+              class="mr-3"
+              [ngClass]="
+                !validateEmailAvailable ? 'opacity-30' : 'cursor-pointer'
+              "
+              (click)="validateEmail(registrationForm.get('email')!)"
+            >
+              <img src="assets\email-icon.svg" />
+            </i>
+            <input
+              id="email"
+              type="email"
+              pInputText
+              formControlName="email"
+              (input)="onEmailInputChange()"
+            />
+          </span>
+          <p
+            *ngIf="
+              (submitted || validateEmailClicked) &&
+              registrationForm.get('email')?.errors
+            "
+            id="error-message"
+          >
+            *გთხოვთ შეიყვანეთ ვალიდური ელ-ფოსტა
+          </p>
+          <p *ngIf="emailResponseError" id="error-message">
+            {{ emailResponseError }}
+          </p>
+        </div>
+
+        <div class="p-field">
+          <label for="personalId">პირადი ნომერი</label>
+          <input
+            id="personalId"
+            type="text"
+            pInputText
+            formControlName="personalId"
+            placeholder="00000000000"
+          />
+          <p
+            *ngIf="submitted && registrationForm.get('personalId')?.errors"
+            id="error-message"
+          >
+            *გთხოვთ შეიყვანეთ ვალიდური პირადი ნომერი
+          </p>
+        </div>
+
+        <div class="p-field">
+          <label for="lastname">გვარი</label>
+          <input
+            id="lastname"
+            type="text"
+            pInputText
+            formControlName="lastName"
+          />
+          <p
+            *ngIf="submitted && registrationForm.get('lastName')?.errors"
+            id="error-message"
+          >
+            *გთხოვთ შეიყვანეთ გვარი ქართული ასოებით
+          </p>
+        </div>
+
+        <div class="p-field">
+          <label for="emailValidationCode">აქტივაციის კოდი</label>
+          <span *ngIf="remainingMinutes" id="email-timer"
+            >ვადა {{ remainingMinutes }} წთ</span
+          >
+          <input
+            id="emailValidationCode"
+            type="text"
+            pInputText
+            formControlName="emailValidationCode"
+            (input)="onEmailValidationCodeInputChange()"
+          />
+          <p
+            *ngIf="submitted && (registrationForm.get('emailValidationCode')?.errors?.['required'] 
+            ||  registrationForm.get('emailValidationCode')?.errors?.['pattern'])"
+            id="error-message"
+          >
+            *გთხოვთ შეიყვანეთ აქტივაციის კოდი
+          </p>
+          <p
+            *ngIf="submitted && emailValidationCodeResponseError"
+            id="error-message"
+          >
+            {{ emailValidationCodeResponseError }}
+          </p>
+        </div>
+
+        <div class="p-field">
+          <label for="password">პაროლი</label>
+          <input
+            id="password"
+            type="password"
+            pInputText
+            formControlName="password"
+            placeholder="( მინიმუმ 8 სიმბოლო )"
+          />
+          <p
+            *ngIf="submitted && registrationForm.get('password')?.errors"
+            id="error-message"
+          >
+            *პაროლი უნდა შედგებოდეს მინიმუმ 8 სიმბოლოსგან და უნდა შეიცავდეს
+            მინიმუმ 1 დიდ და 1 პატარა ასოს, 1 ციფრს და 1 სიმბოლოს
+          </p>
+        </div>
+
+        <div class="p-field">
+          <label for="file">ფოტოსურათი</label>
+          <span class="p-input-icon-right">
+            <i class="pi pi-image text-lg mr-3"></i>
+            <input
+              id="file"
+              type="file"
+              accept="image/*"
+              pInputText
+              formControlName="file"
+              (change)="onFileSelected($event)"
+          /></span>
+
+          <p
+            *ngIf="submitted && registrationForm.get('file')?.errors"
+            id="error-message"
+          >
+            *გთხოვთ ატვირთეთ ფოტოსურათი
+          </p>
+        </div>
+
+        <button
+          pButton
+          type="submit"
+          label="რეგისტრაცია"
+          class="w-11rem bg-blue-900"
+        ></button>
+      </div>
+    </form>
+  </div>
+</div>

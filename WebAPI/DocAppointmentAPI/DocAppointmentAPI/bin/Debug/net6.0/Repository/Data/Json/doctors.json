@@ -1,0 +1,222 @@
+[
+  {
+    "firstName": "ვახტანგ",
+    "lastName": "მებაძე",
+    "email": "doctor1@test.com",
+    "password": "Test123.",
+    "personalId": "01001000001",
+    "rating": 2.5,
+    "viewCount": 23778,
+    "imageId": "1.jpg",
+    "categoryId": "3e3f9cb9-cd51-4b75-8b62-17d67e63e56f"
+  },
+  {
+    "firstName": "გიორგი",
+    "lastName": "გიორგაძე",
+    "email": "doctor2@test.com",
+    "password": "Test123.",
+    "personalId": "03001000001",
+    "rating": 4.8,
+    "viewCount": 24078,
+    "imageId": "2.jpg",
+    "categoryId": "0c22ca08-04ab-4229-a1d1-6cfd3b3a89f3"
+  },
+  {
+    "firstName": "გიორგი",
+    "lastName": "კახიძე",
+    "email": "doctor3@test.com",
+    "password": "Test123.",
+    "personalId": "05001000001",
+    "rating": 2,
+    "viewCount": 22365,
+    "imageId": "3.jpg",
+    "categoryId": "7ab2ba1c-6ebd-4521-b5e7-94e5f496b5e5"
+  },
+  {
+    "firstName": "ნიკოლოზ",
+    "lastName": "ბერიძე",
+    "email": "doctor4@test.com",
+    "password": "Test123.",
+    "personalId": "01001000001",
+    "rating": 2.5,
+    "viewCount": 15950,
+    "imageId": "4.jpg",
+    "categoryId": "f7a4a9a4-4c4e-4388-8fb2-34e54e62d141"
+  },
+  {
+    "firstName": "ლევან",
+    "lastName": "ფირცხილაძე",
+    "email": "doctor5@test.com",
+    "password": "Test123.",
+    "personalId": "03001000001",
+    "rating": 4.8,
+    "viewCount": 12684,
+    "imageId": "5.jpg",
+    "categoryId": "81e66662-9bbd-4d8e-a2bb-83e870d381d1"
+  },
+  {
+    "firstName": "ნიკა",
+    "lastName": "ვარდიშვილი",
+    "email": "doctor6@test.com",
+    "password": "Test123.",
+    "personalId": "04001000001",
+    "rating": 3.5,
+    "viewCount": 15802,
+    "imageId": "6.jpg",
+    "categoryId": "c8a5f2c7-c0ba-48ea-9c96-84db97f7af5e"
+  },
+  {
+    "firstName": "გიორგი",
+    "lastName": "გირანიშვილი",
+    "email": "doctor7@test.com",
+    "password": "Test123.",
+    "personalId": "05001000001",
+    "rating": 2,
+    "viewCount": 11916,
+    "imageId": "7.jpg",
+    "categoryId": "9314e4d1-90f4-4c19-a3f1-0d6b28ba6b0c"
+  },
+  {
+    "firstName": "ზურა",
+    "lastName": "წყლისაფრენაძე",
+    "email": "doctor8@test.com",
+    "password": "Test123.",
+    "personalId": "07001000001",
+    "rating": 4.2,
+    "viewCount": 23806,
+    "imageId": "8.jpg",
+    "categoryId": "cc221a92-c91a-4be9-9b0d-83567f424b27"
+  },
+  {
+    "firstName": "ალექსანდრე",
+    "lastName": "გაბაშვილი",
+    "email": "doctor9@test.com",
+    "password": "Test123.",
+    "personalId": "07001000001",
+    "rating": 3.9,
+    "viewCount": 19210,
+    "imageId": "9.jpg",
+    "categoryId": "f5361df2-cacf-47c9-a97d-277d023b25d6"
+  },
+  {
+    "firstName": "გიორგი",
+    "lastName": "გვაზარია",
+    "email": "doctor10@test.com",
+    "password": "Test123.",
+    "personalId": "04001000001",
+    "rating": 2.2,
+    "viewCount": 11687,
+    "imageId": "10.jpg",
+    "categoryId": "ea6c9445-bb8c-4f4b-bda4-5fcd3f3d6f29"
+  },
+  {
+    "firstName": "ანა",
+    "lastName": "ჩხატაია",
+    "email": "doctor11@test.com",
+    "password": "Test123.",
+    "personalId": "02001000001",
+    "rating": 3.2,
+    "viewCount": 19301,
+    "imageId": "14.jpg",
+    "categoryId": "f10bdf25-6af8-422c-9d7e-6dc2b1278ea5"
+  },
+  {
+    "firstName": "ნინო",
+    "lastName": "აბაზაძე",
+    "email": "doctor12@test.com",
+    "password": "Test123.",
+    "personalId": "04001000001",
+    "rating": 3.5,
+    "viewCount": 17152,
+    "imageId": "15.jpg",
+    "categoryId": "f26c0d0b-9409-4f2b-9521-984cc43e53df"
+  },
+  {
+    "firstName": "ნინო",
+    "lastName": "ქართველიძე",
+    "email": "doctor13@test.com",
+    "password": "Test123.",
+    "personalId": "02001000001",
+    "rating": 3.2,
+    "viewCount": 21850,
+    "imageId": "15.jpg",
+    "categoryId": "d8f36a3b-9c10-49d8-93e2-34f1b10fb2d2"
+  },
+  {
+    "firstName": "ნანა",
+    "lastName": "ბაგრატიონი",
+    "email": "doctor14@test.com",
+    "password": "Test123.",
+    "personalId": "08001000001",
+    "rating": 3.9,
+    "viewCount": 22046,
+    "imageId": "17.jpg",
+    "categoryId": "8828e170-2e2b-4a1e-ba2c-bd0edf32bca7"
+  },
+  {
+    "firstName": "ელენე",
+    "lastName": "რაზიკაშვილი",
+    "email": "doctor15@test.com",
+    "password": "Test123.",
+    "personalId": "09001000001",
+    "rating": 4.8,
+    "viewCount": 22478,
+    "imageId": "18.jpg",
+    "categoryId": "d2f2a8c1-08a5-44b2-8f39-8c307be5062d"
+  },
+  {
+    "firstName": "ანა",
+    "lastName": "ჩხატაია",
+    "email": "doctor16@test.com",
+    "password": "Test123.",
+    "personalId": "10001000001",
+    "rating": 3.5,
+    "viewCount": 13970,
+    "imageId": "19.jpg",
+    "categoryId": "1b857688-537f-4bda-8493-4ee4c30e8120"
+  },
+  {
+    "firstName": "ნიკე",
+    "lastName": "ხერემიძე",
+    "email": "doctor17@test.com",
+    "password": "Test123.",
+    "personalId": "06001000001",
+    "rating": 4.5,
+    "viewCount": 16936,
+    "imageId": "20.jpg",
+    "categoryId": "44c58ee9-32f9-46dd-94e6-5c18e1de6d5f"
+  },
+  {
+    "firstName": "ნანა",
+    "lastName": "გაბაშაშვილი",
+    "email": "doctor18@test.com",
+    "password": "Test123.",
+    "personalId": "04001000001",
+    "rating": 3.6,
+    "viewCount": 23651,
+    "imageId": "21.jpg",
+    "categoryId": "c449b7f7-2c08-462d-8ebf-607c23ea9f13"
+  },
+  {
+    "firstName": "თამარ",
+    "lastName": "გაბაშაშვილი",
+    "email": "doctor19@test.com",
+    "password": "Test123.",
+    "personalId": "02002000002",
+    "rating": 4.1,
+    "viewCount": 13772,
+    "imageId": "22.jpg",
+    "categoryId": "bb1b75df-21a2-43f2-b2a8-f7a69d0c625a"
+  },
+  {
+    "firstName": "მარიამ",
+    "lastName": "ჯანაშვილი",
+    "email": "doctor20@test.com",
+    "password": "Test123.",
+    "personalId": "03003000003",
+    "rating": 3.8,
+    "viewCount": 12917,
+    "imageId": "23.jpg",
+    "categoryId": "3e3f9cb9-cd51-4b75-8b62-17d67e63e56f"
+  }
+]

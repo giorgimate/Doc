@@ -1,0 +1,17 @@
+<div class="flex justify-content-between w-8">
+  <button
+    *ngFor="let item of items"
+    [ngClass]="
+    item.active
+        ? 'bg-blue-50 border-blue-50'
+        : 'bg-white border-blue-100'
+    "
+    id="menu-button"
+    pButton
+    pRipple
+    [label]="item.label!"
+    (click)="onActiveItemChange(item)"
+    class="h-3rem pr-1 border-round-3xl 0 hover:bg-blue-50 hover:border-blue-50 text-900 w-15rem"
+  ></button>
+</div>
+<!-- [ngtyle]="{ color: isItemActive(item) ? '#18a4e1' : '' }" -->

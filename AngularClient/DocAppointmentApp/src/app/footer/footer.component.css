@@ -1,0 +1,56 @@
+#container {
+  margin-left: -150px;
+  margin-right: -150px;
+  padding-left: 150px;
+  padding-right: 150px;
+  height: 18.75rem;
+}
+#logo-container {
+  margin-bottom: 7.5rem;
+}
+#company-name {
+  font-size: 1.375rem;
+  letter-spacing: 0.07em;
+}
+.table-container {
+  width: 75.625rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.line {
+  border-bottom: 2px solid rgba(236, 242, 248, 0.3);
+  position: absolute;
+  width: 100%;
+  top: 2.5rem;
+}
+table {
+  border-collapse: collapse;
+}
+.table-body {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+}
+th,
+td {
+  letter-spacing: 0.07em;
+  color: #ffffff;
+}
+th {
+  text-align: left;
+  font-weight: 400;
+}
+td {
+  white-space: pre-line;
+  font-weight: 300;
+  height: 1.688rem;
+}
+#copyright {
+  margin-left: -150px;
+  margin-right: -150px;
+  padding-left: 150px;
+  padding-right: 150px;
+  height: 2.188rem;
+  letter-spacing: 0.07em;
+  font-size: 0.875rem;
+}

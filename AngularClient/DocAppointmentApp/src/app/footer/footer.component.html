@@ -1,0 +1,26 @@
+<div class="flex align-items-center flex-wrap bg-blue-900" id="container">
+  <div
+    class="flex align-items-center justify-content-center mr-auto"
+    id="logo-container"
+  >
+    <img src="assets\company-icon-white.png" width="56" height="38" />
+    <span class="ml-2 font-medium text-white" id="company-name">კლინიკა</span>
+  </div>
+
+  <div class="table-container">
+    <div class="line"></div>
+    <table *ngFor="let table of dataTable">
+      <tr>
+        <th>{{ table.header }}</th>
+      </tr>
+      <div class="table-body">
+        <tr *ngFor="let data of table.content">
+          <td [innerHTML]="data"></td>
+        </tr>
+      </div>
+    </table>
+  </div>
+</div>
+<div class="bg-blue-50 text-900 flex align-items-center" id="copyright">
+  copyright
+</div>

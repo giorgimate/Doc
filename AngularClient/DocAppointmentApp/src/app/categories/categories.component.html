@@ -1,0 +1,35 @@
+<div class="w-22rem flex flex-column" id="container">
+  <h2 class="text-lg font-medium text-blue-900 pl-7 mt-0">კატეგორიები</h2>
+  <ul class="list-none pl-0 m-0 border-top-2 border-gray-100">
+    <li
+      class="text-blue-900 cursor-pointer relative"
+      *ngFor="let category of categories; let i = index"
+      [ngClass]="{ hidden: !showAll && i > 13, selected: selectedIndex === i }"
+      (click)="toggleSelected(i)"
+    >
+      <span class="w-4rem inline-block" id="category-count"
+        >( {{ category.doctorsCount }} )</span
+      >
+      <span>{{ category.name }}</span>
+      <span
+        id="category-icon"
+        class="pi pi-chevron-right relative ml-auto text-blue-400"
+      ></span>
+    </li>
+  </ul>
+  <div
+    class="flex-grow-1 border-bottom-2 border-gray-100"
+    id="space-filler"
+  ></div>
+  <div
+    class="no-underline text-blue-400 text-sm pl-7 pr-6 cursor-pointer flex justify-content-between"
+    id="category-link"
+    (click)="toggleCategories()"
+  >
+    {{ showAll ? "დამალვა" : "სრულად ნახვა" }}
+    <span
+      class="pi ml-2 vertical-align-middle"
+      [ngClass]="showAll ? 'pi-chevron-up' : 'pi-chevron-down'"
+    ></span>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+#container {
+  min-height: 7rem;
+}
+#company-name {
+  font-size: 1.375rem;
+  letter-spacing: 0.07em;
+}
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  color: #053354;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 2px 1rem -2px 1rem;
+  padding: 1rem 0;
+}
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-highlight .p-menuitem-link {
+  font-weight: 500;
+}
+:host::ng-deep
+  .p-tabmenu
+  .p-tabmenu-nav
+  .p-tabmenuitem
+  .p-menuitem-link:not(.p-disabled):focus {
+  box-shadow: none;
+}
+:host::ng-deep
+  .p-tabmenu
+  .p-tabmenu-nav
+  .p-tabmenuitem:first-child
+  .p-menuitem-link {
+  padding-left: 0;
+  margin-left: 0;
+}
+:host::ng-deep
+  .p-tabmenu
+  .p-tabmenu-nav
+  .p-tabmenuitem:nth-last-child(2)
+  .p-menuitem-link {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+:host::ng-deep .p-button:focus {
+  box-shadow: none;
+}
+:host::ng-deep #menu-button:hover .p-button-label {
+  color: #18a4e1;
+}
+
+:host::ng-deep .p-dialog {
+  border-radius: 0.625rem;
+}
+:host::ng-deep .p-dialog-title {
+  color: #18a4e1 !important;
+  font-size: 1.625rem !important;
+  font-weight: 500 !important;
+  padding-top: 3rem;
+}
+:host::ng-deep .p-dialog-header {
+  padding: 4rem 7rem 0.625rem 7rem;
+  padding: 1rem 1rem 0.625rem 7rem;
+  border-top-right-radius: 0.625rem;
+  border-top-left-radius: 0.625rem;
+}
+:host::ng-deep .p-dialog-header-icons {
+  margin-bottom: auto !important;
+}
+:host::ng-deep .p-dialog-content {
+  padding: 0 7rem 5.625rem 7rem;
+  border-bottom-right-radius: 0.625rem !important;
+  border-bottom-left-radius: 0.625rem !important;
+}

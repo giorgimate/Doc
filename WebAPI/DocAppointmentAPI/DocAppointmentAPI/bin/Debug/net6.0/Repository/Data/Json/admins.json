@@ -1,0 +1,16 @@
+[
+  {
+    "firstName": "ადმინ",
+    "lastName": "პირველი",
+    "email": "admin1@test.com",
+    "password": "Test123.",
+    "personalId": "11111111111"
+  },
+  {
+    "firstName": "ადმინ",
+    "lastName": "მეორე",
+    "email": "admin2@test.com",
+    "password": "Test123.",
+    "personalId": "22222222222"
+  }
+]

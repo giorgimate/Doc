@@ -1,0 +1,26 @@
+<div class="doctor-card" [ngClass]="{ pinned: doctor.pinned }">
+  <div class="header">
+    <div class="view-count">
+      <img src="assets\eye-icon.svg" />
+      <span>{{ doctor.viewCount | numberFormat }}</span>
+    </div>
+    <div class="pin" (click)="togglePin.emit(doctor)">
+      <div class="pin-icon"></div>
+    </div>
+  </div>
+  <img class="picture" [src]="doctor.imageUrl" alt="Doctor Picture" />
+  <div class="full-name">{{ doctor.firstName + " " + doctor.lastName }}</div>
+  <div class="category">{{ doctor.category }}</div>
+  <div class="rating">
+    <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+      <img
+        src="assets\star-icon.svg"
+        [ngClass]="star <= doctor.rating ? '' : 'hidden'"
+      />
+    </ng-container>
+  </div>
+  <button class="make-appointment" routerLink="/booking/{{ this.doctor.id }}">
+    <span>მიღებაზე ჩაწერა</span>
+    <i class="pi pi-chevron-right"></i>
+  </button>
+</div>

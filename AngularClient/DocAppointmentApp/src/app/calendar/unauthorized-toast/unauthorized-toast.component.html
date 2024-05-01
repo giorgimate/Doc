@@ -1,0 +1,20 @@
+<p-toast key="unauthorizedToast" position="bottom-center" [preventOpenDuplicates]="true">
+  <ng-template let-message pTemplate="message">
+    <div class="p-toast-message-summary text-red-500">
+      {{ message.summary }}
+    </div>
+    <div class="p-toast-message-detail">
+      <span>
+        <span
+          (click)="openLoginDialog()"
+          class="text-color underline cursor-pointer"
+          >ავტორიზაცია</span
+        >
+        ან
+        <span routerLink="/register" class="text-color underline cursor-pointer"
+          >რეგისტრაცია</span
+        >
+      </span>
+    </div>
+  </ng-template>
+</p-toast>

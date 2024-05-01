@@ -1,0 +1,6 @@
+:host::ng-deep .p-button:focus {
+  box-shadow: none;
+}
+:host::ng-deep #menu-button .p-button-label {
+    color: #18a4e1;
+  }

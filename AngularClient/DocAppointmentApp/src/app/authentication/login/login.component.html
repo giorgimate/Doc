@@ -1,0 +1,43 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+  <div class="p-fluid">
+    <div class="p-field">
+      <input
+        id="email"
+        type="email"
+        pInputText
+        formControlName="email"
+        placeholder="ელ-ფოსტა"
+        (input)="onInputChange()"
+      />
+      <p *ngIf="submitted && loginForm.get('email')?.errors" id="error-message">
+        *გთხოვთ შეიყვანეთ ელ-ფოსტა
+      </p>
+    </div>
+
+    <div class="p-field">
+      <input
+        id="password"
+        type="password"
+        pInputText
+        formControlName="password"
+        placeholder="პაროლი"
+        (input)="onInputChange()"
+      />
+      <p
+        *ngIf="submitted && loginForm.get('password')?.errors"
+        id="error-message"
+      >
+        *გთხოვთ შეიყვანეთ პაროლი
+      </p>
+      <p *ngIf="errorMessage" id="error-message">
+        {{ errorMessage }}
+      </p>
+    </div>
+
+    <div class="link-container">
+      <a routerLink="/forgotpassword" class="link">პაროლის აღდგენა</a>
+    </div>
+
+    <button pButton type="submit" label="შესვლა" class="bg-blue-900"></button>
+  </div>
+</form>

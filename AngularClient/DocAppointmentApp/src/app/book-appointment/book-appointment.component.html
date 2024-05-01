@@ -1,0 +1,43 @@
+<div class="flex" id="content">
+  <app-categories></app-categories>
+  <div
+    id="wrapper"
+    [ngStyle]="
+      user ? { display: 'flex', 'justify-content': 'space-around' } : {}
+    "
+  >
+    <!-- for non personal calendars -->
+    <app-doctor-info-card
+      *ngIf="doctor"
+      [doctor]="doctor"
+      class="mb-5"
+    ></app-doctor-info-card>
+
+    <!-- for personal calendars -->
+    <app-user-info-card
+      *ngIf="user"
+      [user]="user"
+      class="mr-5"
+    ></app-user-info-card>
+
+    <div [ngStyle]="{ 'margin-top': doctor ? '2rem' : '' }">
+      <h2
+        *ngIf="user?.role == 'Patient'"
+        class="mt-0 mb-6 text-3xl"
+        style="color: #18a4e1; font-weight: 500"
+      >
+        ჩემი ჯავშანი
+        <span style="color: rgba(5, 51, 84, 0.3)"
+          >( {{ user?.appointmentsCount }} )</span
+        >
+      </h2>
+      <app-calendar *ngIf="initCalendar"
+        [isPersonalCalendar]="user ? true : false"
+        [generateAvailableSlots]="generateAvailableSlots"
+        [isDoctorCalendar]="isDoctorCalendar"
+      ></app-calendar>
+    </div>
+  </div>
+</div>
+
+<!-- booking or self? -->

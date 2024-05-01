@@ -1,0 +1,8 @@
+.card {
+  height: 37rem;
+}
+:host::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  padding-top: .3125rem ;
+  padding-bottom: .3125rem ;
+
+}

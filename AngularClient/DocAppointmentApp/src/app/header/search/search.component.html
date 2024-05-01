@@ -1,0 +1,47 @@
+<div class="flex align-items-center bg-blue-50 h-7rem" id="container">
+  <div class="flex align-items-center mr-6">
+    <div
+      class="bg-white border-circle flex align-items-center justify-content-center mr-3"
+      id="icon-container"
+    >
+      <img src="assets\call-icon.svg" />
+    </div>
+    <div class="text-900 text-lg" id="tel-number">032 2 100 100</div>
+  </div>
+
+  <div class="flex align-items-center mr-auto">
+    <div
+      class="bg-white border-circle flex align-items-center justify-content-center mr-3"
+      id="icon-container"
+    >
+      <img src="assets\location-icon.svg" />
+    </div>
+    <div class="text-900 text-lg">იაკობ ნიკოლაძე №10</div>
+  </div>
+
+  <p-autoComplete
+    class="mr-4"
+    (onFocus)="clearInput(2)"
+    [(ngModel)]="selectedName"
+    [suggestions]="suggestions"
+    (completeMethod)="searchByDoctorName($event)"
+    (onSelect)="onDoctorSelected($event)"
+    placeholder="მოძებნე ექიმი სახელით"
+  ></p-autoComplete>
+
+  <p-autoComplete
+    class="mr-4"
+    (onFocus)="clearInput(1)"
+    [(ngModel)]="selectedCategory"
+    [suggestions]="suggestions"
+    (completeMethod)="searchByCategory($event)"
+    (onSelect)="onCategorySelected($event)"
+    placeholder="მოძებნე სპეციალობით"
+  ></p-autoComplete>
+
+  <p-button
+    icon="pi pi-search"
+    styleClass="p-button-rounded p-button-lg h-3rem w-3rem border-transparent bg-blue-900"
+    (click)="searchByName()"
+  ></p-button>
+</div>

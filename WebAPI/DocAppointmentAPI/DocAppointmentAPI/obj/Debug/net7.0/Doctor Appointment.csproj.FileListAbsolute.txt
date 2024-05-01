@@ -1,0 +1,7 @@
+C:\Users\davit\RS\Doctor Appointment\Doctor Appointment\obj\Debug\net7.0\Doctor Appointment.csproj.AssemblyReference.cache
+C:\Users\davit\RS\Doctor Appointment\Doctor Appointment\obj\Debug\net7.0\Doctor Appointment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\davit\RS\Doctor Appointment\Doctor Appointment\obj\Debug\net7.0\Doctor Appointment.AssemblyInfoInputs.cache
+C:\Users\davit\RS\Doctor Appointment\Doctor Appointment\obj\Debug\net7.0\Doctor Appointment.AssemblyInfo.cs
+C:\Users\davit\RS\Doctor Appointment\Doctor Appointment\obj\Debug\net7.0\Doctor Appointment.csproj.CoreCompileInputs.cache
+C:\Users\davit\RS\Doctor Appointment\Doctor Appointment\obj\Debug\net7.0\Doctor Appointment.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\davit\RS\Doctor Appointment\Doctor Appointment\obj\Debug\net7.0\Doctor Appointment.MvcApplicationPartsAssemblyInfo.cache

@@ -1,0 +1,27 @@
+<div class="user-card">
+  <img class="picture" src="{{ user.imageUrl }}" />
+
+  <div class="full-name">
+    {{ user.firstName + " " + user.lastName }}
+  </div>
+  <div *ngIf="user.role == 'Doctor'">
+    <div class="category">{{ user.category }}</div>
+    <div class="rating">
+      <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+        <img
+          src="assets\star-icon.svg"
+          [ngClass]="star <= user.rating ? '' : 'hidden'"
+        />
+      </ng-container>
+    </div>
+  </div>
+  <div class="label">პირადი ნომერი:</div>
+  <div class="value">{{ user.personalId }}</div>
+  <div class="label">ელ-ფოსტა:</div>
+  <div class="value">{{ user.email }}</div>
+  <div class="label" id="change-password">პაროლის შეცვლა</div>
+  <div class="label">
+    {{ user.role == "Doctor" ? "დაჯავშნილია:" : "ჩემი ჯავშანი:" }}
+  </div>
+  <div class="value">( {{ user.appointmentsCount }} )</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="doctor-card">
+  <div class="top-container">
+    <img class="picture" src="{{doctor.imageUrl}}" />
+
+    <div class="info">
+      <div class="full-name">
+        {{ doctor.firstName + " " + doctor.lastName }}
+      </div>
+      <div class="category">{{ doctor.category }}</div>
+      <div class="rating">
+        <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+          <img
+            src="assets\star-icon.svg"
+            [ngClass]="star <= doctor.rating ? '' : 'hidden'"
+          />
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <p *ngFor="let description of descriptions">
+      <span>{{ description.date }}</span
+      >, {{ description.info }}
+    </p>
+  </div>
+</div>

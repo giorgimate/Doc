@@ -1,0 +1,38 @@
+#container {
+  margin-left: -150px;
+  margin-right: -150px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+:host::ng-deep .p-autocomplete-input {
+  width: 30rem;
+  height: 3.125rem;
+  border-radius: 1.5rem;
+  color: #053354;
+  padding-left: 1.875rem;
+}
+:host::ng-deep .p-autocomplete-input::placeholder {
+  font-size: 0.875rem;
+  opacity: 0.3;
+}
+
+:host::ng-deep .p-autocomplete-panel {
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+:host::ng-deep .p-inputtext:enabled:focus {
+  box-shadow: none;
+}
+:host::ng-deep .p-button:focus {
+  box-shadow: none;
+}
+:host::ng-deep .p-button:hover {
+  opacity: 0.9;
+}
+#tel-number {
+  letter-spacing: 0.05em;
+}
+#icon-container{
+  width: 2.5rem;
+  height: 2.5rem;
+}

@@ -1,0 +1,40 @@
+<div class="slider-container flex align-items-center relative">
+  <div class="overlay absolute top-0 bottom-0 right-0 left-0"></div>
+  <div class="wrapper relative z-1">
+    <h1 class="text-6xl text-white font-semibold mb-6 mt-0" id="title">
+      აირჩიე კლინიკა რომელსაც შეგიძლია ენდო
+    </h1>
+    <div
+      class="bg-white h-4rem w-23rem pl-5 text-900 flex align-items-center"
+      id="location"
+    >
+      <img src="assets\location-icon.svg" class="mr-3" /> იაკობ ნიკოლაძე №10
+    </div>
+  </div>
+</div>
+<div class="flex" id="content">
+  <app-categories></app-categories>
+  <div id="wrapper">
+    <div
+      id="cards"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="loadMoreDoctors()"
+    >
+      <app-doctor-card
+        *ngFor="let doctor of doctors"
+        [doctor]="doctor"
+        (togglePin)="togglePin(doctor)"
+      ></app-doctor-card>
+    </div>
+    <div
+      *ngIf="expandButtonEnabled && doctors.length > 5"
+      class="text-blue-900 text-sm cursor-pointer text-right"
+      id="expand-button"
+      (click)="enableLazyLoading()"
+    >
+      სრულად ნახვა
+    </div>
+  </div>
+</div>
